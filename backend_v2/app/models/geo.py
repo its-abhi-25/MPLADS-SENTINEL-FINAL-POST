@@ -79,11 +79,11 @@ class GeoNameCrosswalk(Base):
 
 
 class AuthorityGeo(Base):
-    """Phase 9: where each district authority actually IS. Its stored
-    district_authority.state_id is the state of the first MP row seen, which
-    is wrong for ~12% of scored works (docs/phase9_report.md). The map uses
-    this corrected location; risk_result is untouched (the upstream fix is a
-    separate, deferred step)."""
+    """Phase 9: where each district authority actually IS (district polygon and
+    state). Until Phase 13.y the stored district_authority.state_id was the
+    first MP row's state, wrong for 52 authorities; the ingest now stores the
+    resolved state, so state_differs is false for every authority (a test
+    enforces it) and stored_state_id mirrors the stored value."""
 
     __tablename__ = "authority_geo"
 

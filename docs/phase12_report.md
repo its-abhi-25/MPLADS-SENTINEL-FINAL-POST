@@ -361,7 +361,8 @@ These changes are frontend only.
 This change is frontend only.
 
 - **Landing "Currently flagged for review".** The figure now counts
-  CRITICAL + HIGH (`critical_count + high_count`, 31,683 on run 1). That is
+  CRITICAL + HIGH (`critical_count + high_count`, 31,683 on run 1; 31,814 on
+  run 44 after the Phase 13.y authority-state fix -- the page reads it live). That is
   the definition of "flagged" everywhere else in the app: Dashboard, Map,
   Analytics flag rates and MP profiles.
 - It previously added MODERATE ("review recommended"), giving 78,427.
@@ -369,7 +370,8 @@ This change is frontend only.
 
 ## 7. Still open (owner's call; not changed here)
 
-- **Authority-state bug (Phase 9).**
+- **Authority-state bug (Phase 9).** *Fixed in Phase 13.y (2026-09-28): run 44,
+  published; see `docs/validation_report_v1.md` §10.*
   - 52 district authorities, carrying 11,783 scored works, have the wrong
     state. Their peer groups and the risk scores built on them used it.
   - Display and the map use the corrected location state; the scores do

@@ -25,6 +25,7 @@ mechanism:
 
 from __future__ import annotations
 
+import datetime as dt
 import math
 import random
 import secrets
@@ -167,6 +168,23 @@ def blind_items(session: Session, sample_id: int, reviewer_user_id: int, page: i
     return {"sample_id": sample_id, "items": items, "total": total, "page": page, "page_size": page_size}
 
 
+def archive(session: Session, sample_id: int, reason: str) -> AuditSample:
+    """Retire a sample (e.g. drawn on a superseded run): kept with its items and
+    reviews as the record, but closed to new reviews."""
+    sample = session.get(AuditSample, sample_id)
+    if sample is None:
+        raise LookupError(sample_id)
+    if sample.archived_at is None:
+        sample.archived_at = dt.datetime.now(dt.timezone.utc)
+        sample.archive_reason = reason
+        session.flush()
+    return sample
+
+
+class ArchivedSampleError(ValueError):
+    pass
+
+
 def add_review(
     session: Session, *, blind_code: str, principal, outcome: str, note: str | None
 ) -> AuditReview:
@@ -177,6 +195,8 @@ def add_review(
     ).scalar_one_or_none()
     if item is None:
         raise LookupError(blind_code)
+    if session.get(AuditSample, item.sample_id).archived_at is not None:
+        raise ArchivedSampleError("this audit sample is archived")
     review = AuditReview(
         item_id=item.id,
         reviewer_user_id=principal.user_id,

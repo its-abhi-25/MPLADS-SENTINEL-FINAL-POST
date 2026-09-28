@@ -95,33 +95,34 @@ def load_state_aliases(session: Session, data_dir: Path, name_to_id: dict[str, i
 def load_district_authorities(
     session: Session,
     ida_state_pairs: set[tuple[str, str]],
-    name_to_id: dict[str, int],
     snapshot: SourceSnapshot,
 ) -> dict:
     """District key is parsed as the text before the IDA name's first '('
     (e.g. "CHIKKAMAGALURU(DEPUTY COMMISSIONER CHIKMAGALUR_IDA)" ->
     "CHIKKAMAGALURU"), per the brief's "district keys parsed from IDA
-    names" instruction."""
+    names" instruction.
+
+    The state is NOT set here (Phase 13.y fix). A portal row's STATE_NAME is
+    the recommending MP's state, so taking one of an authority's pairs (the
+    alphabetically first, as before) filed 52 authorities under the wrong
+    state. app/ingest/authority_state.resolve_authority_states() sets it from
+    the authority's own district, right after this load (scripts/run_ingest.py)."""
     existing = {d.ida_name for d in session.execute(select(DistrictAuthority)).scalars()}
     added = 0
-    unmatched_state = 0
 
-    for ida_name, state_name in sorted(ida_state_pairs):
+    for ida_name in sorted({ida for ida, _ in ida_state_pairs}):
         if ida_name in existing:
             continue
         district_key = ida_name.split("(", 1)[0].strip() or None
-        state_id = name_to_id.get(_normalize(state_name))
-        if state_id is None:
-            unmatched_state += 1
         session.add(
             DistrictAuthority(
                 ida_name=ida_name,
                 district_key=district_key,
-                state_id=state_id,
+                state_id=None,
                 first_seen_snapshot_id=snapshot.id,
             )
         )
         existing.add(ida_name)
         added += 1
 
-    return {"added": added, "total_candidates": len(ida_state_pairs), "unmatched_state": unmatched_state}
+    return {"added": added, "total_candidates": len({ida for ida, _ in ida_state_pairs})}

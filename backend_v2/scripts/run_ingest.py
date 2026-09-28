@@ -9,6 +9,7 @@ Usage (from backend_v2/, with DATABASE_URL pointing at a migrated Postgres):
 Idempotent: safe to re-run against the same data/ and database -- see
 app/ingest/pipeline.py's module docstring.
 """
+
 from __future__ import annotations
 
 import datetime as dt
@@ -21,7 +22,7 @@ from sqlalchemy import func, select  # noqa: E402
 
 from app.core.config import get_settings  # noqa: E402
 from app.db.session import get_session_factory  # noqa: E402
-from app.ingest import geo_load, pipeline, reference_load  # noqa: E402
+from app.ingest import authority_state, geo_load, pipeline, reference_load  # noqa: E402
 from app.models.provenance import ControlTotal, ImportReject, RawFile  # noqa: E402
 from app.models.work import Work  # noqa: E402
 
@@ -40,8 +41,12 @@ def main() -> int:
         alias_result = reference_load.load_state_aliases(session, data_dir, name_to_id)
         snapshot_a = pipeline.get_or_create_snapshot(session, "snapshot_a")
         district_result = reference_load.load_district_authorities(
-            session, result["ida_state_pairs"], name_to_id, snapshot_a
+            session, result["ida_state_pairs"], snapshot_a
         )
+        session.flush()
+        # The state each authority is IN, from its own district (Phase 13.y fix;
+        # needs the LGD district file from scripts/fetch_geo_data.sh).
+        district_result["states"] = authority_state.resolve_authority_states(session)
 
         national = geo_load.load_national(session)
         state_geo = geo_load.load_states(session, national)
@@ -134,9 +139,7 @@ def render_report(session, result, alias_result, district_result, crosswalk_resu
     lines.append("## 4. House-tagging")
     lines.append("")
     total_work = session.execute(select(func.count(Work.work_key))).scalar_one()
-    by_house = session.execute(
-        select(Work.house, func.count(Work.work_key)).group_by(Work.house)
-    ).all()
+    by_house = session.execute(select(Work.house, func.count(Work.work_key)).group_by(Work.house)).all()
     by_source = session.execute(
         select(Work.house_source, func.count(Work.work_key)).group_by(Work.house_source)
     ).all()
@@ -155,9 +158,11 @@ def render_report(session, result, alias_result, district_result, crosswalk_resu
 
     # Deterministic spread (md5 of the key, key as tie-break): the same 20
     # rows on every run, so regenerated reports diff cleanly.
-    sample = session.execute(
-        select(Work).order_by(func.md5(Work.work_key), Work.work_key).limit(20)
-    ).scalars().all()
+    sample = (
+        session.execute(select(Work).order_by(func.md5(Work.work_key), Work.work_key).limit(20))
+        .scalars()
+        .all()
+    )
     lines.append("### Sample of 20 House-tagged work rows")
     lines.append("")
     lines.append("| work_key | house | house_source | raw_mp_name |")
@@ -188,14 +193,15 @@ def render_report(session, result, alias_result, district_result, crosswalk_resu
         lines.append(f"  - Unmatched: {', '.join(alias_result['unmatched'])}")
     lines.append(
         f"District authorities: {district_result['added']} added this run "
-        f"(of {district_result['total_candidates']} candidate IDA names seen); "
-        f"{district_result['unmatched_state']} with no matching state."
+        f"(of {district_result['total_candidates']} candidate IDA names seen). "
+        f"State from the authority's own district: {district_result['states']['methods']}; "
+        f"{district_result['states']['corrected']} stored states set or corrected this run."
     )
     lines.append("")
     lines.append(
         "`person`, `tenure`, `constituency`, `activity_type` are schema-only this phase "
         "(migration created, not populated) -- entity resolution is a later pipeline stage "
-        "(BLUEPRINT.md §5 P3/P5), not part of Phase 1's explicit \"Geo reference load\" scope."
+        '(BLUEPRINT.md §5 P3/P5), not part of Phase 1\'s explicit "Geo reference load" scope.'
     )
     lines.append("")
 

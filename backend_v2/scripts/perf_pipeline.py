@@ -19,7 +19,7 @@ DATA_DIR, timing each stage and recording its peak memory. Then reports:
 
     python scripts/perf_pipeline.py --report ../docs/performance_report.md \\
         --reference-url postgresql+psycopg://user:pw@host:port/db \\
-        --reference-md5 97f08303369f9ed6c50e46d68a4609f5
+        --reference-md5 c4d589e0e0fc40621d4e011a64a7233d
     python scripts/perf_pipeline.py --from-json ../ci-artifacts/perf/perf.json --report ...  # re-render
 """
 

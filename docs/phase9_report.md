@@ -58,6 +58,10 @@ Every marker coordinate is the shapely `representative_point()` of a licensed po
 
 ## The authority-state bug (open, owner deferred)
 
+> **Fixed in Phase 13.y (2026-09-28).** The ingest now stores each authority's own state
+> (`app/ingest/authority_state.py`); Phases 3–5 were re-run as analysis run 44 and published.
+> The figures below describe run 1. See `docs/validation_report_v1.md` §10.
+
 `district_authority.state_id` is the state of the first MP row seen for that authority, not the authority's own state. For example, AGRA is stored under Gujarat and BUDAUN under Jammu and Kashmir.
 
 - The map corrects this in `authority_geo`: **52 authorities** get a different state from the one stored, covering **11,783 scored works**.

@@ -32,10 +32,10 @@ this build's standing rule against tuning thresholds to the data):
                                        and bootstrap draw in this module.
 
 Peer/state note: district_authority_profile groups authorities by STATE
-using Phase 9's authority_geo.resolved_state_id (the corrected location),
-never district_authority.state_id (the first-MP-row bug that misplaces 52
-authorities across 11,783 scored works -- docs/phase9_report.md). This
-module is read-only against district_authority.state_id; it never writes it.
+using Phase 9's authority_geo.resolved_state_id. Since Phase 13.y it equals
+district_authority.state_id for every authority (the first-MP-row bug that
+misplaced 52 authorities is fixed in the ingest). This module is read-only
+against district_authority.state_id; it never writes it.
 """
 
 from __future__ import annotations

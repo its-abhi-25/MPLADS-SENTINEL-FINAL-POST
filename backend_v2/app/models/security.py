@@ -81,6 +81,9 @@ class AuditSample(Base):
     design: Mapped[dict] = mapped_column(JSONB, nullable=False)  # quotas, population sizes, drawn counts
     created_by: Mapped[str] = mapped_column(String(120), nullable=False)
     created_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    # Phase 13.y: a sample drawn on a superseded run is archived, never deleted.
+    archived_at: Mapped[dt.datetime | None] = mapped_column(DateTime(timezone=True))
+    archive_reason: Mapped[str | None] = mapped_column(Text)
 
 
 class AuditSampleItem(Base):

@@ -8,6 +8,7 @@ scripts/publish_run.py (and scripts/fetch_geo_data.sh for the source files).
 
 Only reads risk_result / signal_result.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -37,6 +38,7 @@ def main() -> int:
         }
         session.commit()
         out["location"] = location.link_works(session, snap.id)
+        out["stored_states"] = location.refresh_stored_states(session)
         session.commit()
         # Fresh planner stats: without them the map query below picks a
         # nested-loop plan over freshly-filled work_geo (minutes, not seconds).

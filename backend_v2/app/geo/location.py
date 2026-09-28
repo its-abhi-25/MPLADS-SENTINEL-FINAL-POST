@@ -1,11 +1,13 @@
 """
 Phase 9 location: where each district authority and each work actually is.
 
-The stored district_authority.state_id is the state of the first MP row seen
-for that authority, not the authority's own state (e.g. AGRA stored under
-Gujarat). This module resolves the real location independently, for the map
-only; risk_result and every Phase 3-5 table are untouched (the upstream fix
-is a separate, deferred step -- docs/phase9_report.md).
+Until Phase 13.y the stored district_authority.state_id was the state of the
+first MP row seen for that authority (e.g. AGRA stored under Gujarat), and
+this module's independent resolution was the map's correction. The ingest now
+stores the authority's own state (app/ingest/authority_state.py, the same
+evidence and order as below), so the two agree for every authority; this
+module still resolves each authority's DISTRICT polygon, and its state is a
+cross-check (tests/test_phase13y_authority_state.py fails if they diverge).
 
 Authority -> LGD district, by normalised district name:
   1. exactly one LGD district nationally with that name       -> that district
@@ -280,3 +282,26 @@ def link_works(session: Session, snapshot_id: int) -> dict:
         "constituency_status": dict(Counter(works["constituency_status"])),
         "authorities": auth,
     }
+
+
+def refresh_stored_states(session: Session) -> dict:
+    """authority_geo keeps a copy of the stored state it was compared with.
+    After the ingest corrects stored states (Phase 13.y), refresh that copy
+    and state_differs; the resolved location itself does not change."""
+    n = session.execute(
+        text(
+            """
+        UPDATE authority_geo ag
+        SET stored_state_id = da.state_id,
+            state_differs = (ag.resolved_state_id IS NOT NULL AND da.state_id IS NOT NULL
+                             AND ag.resolved_state_id <> da.state_id)
+        FROM district_authority da
+        WHERE da.id = ag.district_authority_id
+          AND (ag.stored_state_id IS DISTINCT FROM da.state_id
+               OR ag.state_differs <> (ag.resolved_state_id IS NOT NULL AND da.state_id IS NOT NULL
+                                       AND ag.resolved_state_id <> da.state_id))
+        """
+        )
+    ).rowcount
+    differs = session.execute(text("SELECT count(*) FROM authority_geo WHERE state_differs")).scalar_one()
+    return {"refreshed": n, "state_differs": differs}

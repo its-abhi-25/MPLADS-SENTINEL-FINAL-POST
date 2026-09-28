@@ -48,7 +48,8 @@ def risk_result_checksum(session: Session, run_id: int) -> str:
     musl-based `postgres:16-alpine` used so far, because en_US.utf8 sorts
     keys like '1301-RS' / '1302' differently there. Found by the Phase 13
     restore test. Byte order reproduces the reference value on alpine
-    (97f08303369f9ed6c50e46d68a4609f5) and is the same on every server."""
+    (97f08303369f9ed6c50e46d68a4609f5 for run 1; c4d589e0e0fc40621d4e011a64a7233d for
+    run 44, published after the Phase 13.y authority-state fix) and is the same on every server."""
     return session.execute(
         text(
             """

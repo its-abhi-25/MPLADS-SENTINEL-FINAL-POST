@@ -77,6 +77,8 @@ def list_samples(db: Session = Depends(get_db), p: Principal = Depends(require_r
                 "created_by": s.created_by,
                 "created_at": s.created_at.isoformat(),
                 "total_drawn": s.design.get("total_drawn"),
+                "archived_at": s.archived_at.isoformat() if s.archived_at else None,
+                "archive_reason": s.archive_reason,
             }
             for s in rows
         ]
@@ -142,6 +144,8 @@ def add_review(
         return _db(run, "audit review")
     except LookupError as e:
         raise HTTPException(status_code=404, detail="unknown item") from e
+    except sampling.ArchivedSampleError as e:
+        raise HTTPException(status_code=409, detail="this audit sample is archived") from e
     except IntegrityError as e:
         db.rollback()
         raise HTTPException(status_code=409, detail="you have already reviewed this item") from e

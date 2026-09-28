@@ -328,7 +328,7 @@ def test_phase5_code_never_references_evidence_facts():
 
 
 def test_repeat_payee_facts_match_payments_on_real_data(db_session, atyp_run):
-    stored, expected, eligible_hits = db_session.execute(
+    stored, expected, eligible_hits, expected_hits = db_session.execute(
         text(
             """
         WITH pp AS (SELECT work_key, payee_id, COUNT(*) c FROM payment
@@ -340,19 +340,23 @@ def test_repeat_payee_facts_match_payments_on_real_data(db_session, atyp_run):
                (SELECT COUNT(*) FROM w JOIN work_context wc ON wc.work_key = w.work_key AND wc.run_id = :r),
                (SELECT COUNT(*) FROM work_evidence_fact f JOIN atypicality_result a
                   ON a.run_id = f.run_id AND a.work_key = f.work_key AND a.method = 'robust_mahalanobis'
-                 WHERE f.run_id = :r AND a.eligible)
+                 WHERE f.run_id = :r AND f.fact = 'pays_same_payee_more_than_once' AND a.eligible),
+               (SELECT COUNT(*) FROM w JOIN work_context wc ON wc.work_key = w.work_key AND wc.run_id = :r
+                  JOIN atypicality_result a ON a.run_id = :r AND a.work_key = w.work_key
+                   AND a.method = 'robust_mahalanobis' AND a.eligible)
         """
         ),
         {"r": atyp_run},
     ).one()
     assert stored == expected > 0
-    # "The works the singular fit had been blind to" (Phase 6 report). The report's original
-    # 12,173 was a stale one-time cross-tabulation that no longer matches this database, even
-    # though both of its own marginal totals still do (16,911 fact rows, 76,732 Mahalanobis-
-    # eligible works) -- investigated and corrected in docs/phase6_atypicality_report.md's
-    # "Correction (found during Phase 10/11)" section. Not a Phase 9/10/11 regression: nothing
-    # in those phases writes atypicality_result, work_evidence_fact, payment or work_context.
-    assert eligible_hits == 13659
+    # "The works the singular fit had been blind to" (Phase 6 report): repeat-payee works that
+    # the robust distance evaluates. The expected count is computed live from the payment table
+    # (works paying one payee more than once), intersected with the run's Mahalanobis-eligible
+    # works -- not pinned, since it moves with the published run: run 1 12,173 (the Phase 6
+    # report's figure), run 44 12,176 (Phase 13.y: 3 Punjab works gained a qualifying peer group
+    # when 8 Punjab districts moved out of "Chandigarh"). Until Phase 13.y this count lacked the
+    # fact filter and so, once Phase 10 added two more fact types, counted all three (13,659).
+    assert eligible_hits == expected_hits > 0
 
 
 def test_stored_mahalanobis_fit_is_well_conditioned(db_session, atyp_run):

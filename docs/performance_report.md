@@ -85,7 +85,7 @@ reference.
 **The md5 regression checksum is a different, stricter guard.** It hashes the stored floats to
 full precision:
 - This run's value is `a4de5f570b6f04e8566a08932789c069`.
-- The pinned reference is `97f08303369f9ed6c50e46d68a4609f5`.
+- The pinned reference is `97f08303369f9ed6c50e46d68a4609f5` (run 1, when this report was made). Since 2026-09-28 the published run is 44, with checksum `c4d589e0e0fc40621d4e011a64a7233d` (the intentional reset after the authority-state fix; `docs/validation_report_v1.md`); pass that value as `--reference-md5` for a rebuild of the current input.
 - A rebuilt database differs from it only in the last bits of the stored floats:
   - at most 4.3e-14 on a 0–100 risk;
   - one unit in the last place on confidence and on the pre-multiplier score;
