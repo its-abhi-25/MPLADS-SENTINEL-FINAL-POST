@@ -1,0 +1,2603 @@
+{
+  "summary": {
+    "total_dataset_constituencies": 509,
+    "total_dataset_works": 64058,
+    "geojson_source_features": 543,
+    "exact_match": 467,
+    "alias_match": 36,
+    "centroid_fallback": 6,
+    "unmatched": 0,
+    "real_boundary_features": 503,
+    "real_boundary_pct": 98.8,
+    "total_coverage_pct": 100.0,
+    "works_coverage_pct": 100.0
+  },
+  "exact_match": [
+    {
+      "state": "Andaman And Nicobar Islands",
+      "constituency": "ANDAMAN AND NICOBAR ISLANDS",
+      "works": 3
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "AMALAPURAM(SC)",
+      "works": 56
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "ARAKU(ST)",
+      "works": 38
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "BAPATLA",
+      "works": 6
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "CHITTOOR",
+      "works": 290
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "ELURU",
+      "works": 39
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "GUNTUR",
+      "works": 24
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "HINDUPUR",
+      "works": 101
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "KADAPA",
+      "works": 198
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "KAKINADA",
+      "works": 6
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "KURNOOL",
+      "works": 189
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "MACHILIPATNAM",
+      "works": 34
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "NANDYAL",
+      "works": 142
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "NARASARAOPET",
+      "works": 3
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "NELLORE(SC)",
+      "works": 186
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "ONGOLE",
+      "works": 3
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "RAJAHMUNDRY",
+      "works": 3
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "RAJAMPET",
+      "works": 263
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "SRIKAKULAM",
+      "works": 115
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "TIRUPATI(SC)",
+      "works": 256
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "VIJAYAWADA",
+      "works": 1
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "VIZIANAGARAM",
+      "works": 65
+    },
+    {
+      "state": "Arunachal Pradesh",
+      "constituency": "ARUNACHAL EAST",
+      "works": 198
+    },
+    {
+      "state": "Arunachal Pradesh",
+      "constituency": "ARUNACHAL WEST",
+      "works": 114
+    },
+    {
+      "state": "Assam",
+      "constituency": "BARPETA",
+      "works": 23
+    },
+    {
+      "state": "Assam",
+      "constituency": "DHUBRI",
+      "works": 96
+    },
+    {
+      "state": "Assam",
+      "constituency": "DIBRUGARH",
+      "works": 49
+    },
+    {
+      "state": "Assam",
+      "constituency": "JORHAT",
+      "works": 233
+    },
+    {
+      "state": "Assam",
+      "constituency": "KOKRAJHAR (ST)",
+      "works": 20
+    },
+    {
+      "state": "Assam",
+      "constituency": "LAKHIMPUR",
+      "works": 83
+    },
+    {
+      "state": "Assam",
+      "constituency": "NOWGONG",
+      "works": 124
+    },
+    {
+      "state": "Bihar",
+      "constituency": "ARARIA",
+      "works": 79
+    },
+    {
+      "state": "Bihar",
+      "constituency": "ARRAH",
+      "works": 74
+    },
+    {
+      "state": "Bihar",
+      "constituency": "BANKA",
+      "works": 122
+    },
+    {
+      "state": "Bihar",
+      "constituency": "BEGUSARAI",
+      "works": 17
+    },
+    {
+      "state": "Bihar",
+      "constituency": "BHAGALPUR",
+      "works": 40
+    },
+    {
+      "state": "Bihar",
+      "constituency": "BUXAR",
+      "works": 179
+    },
+    {
+      "state": "Bihar",
+      "constituency": "DARBHANGA",
+      "works": 164
+    },
+    {
+      "state": "Bihar",
+      "constituency": "GAYA (SC)",
+      "works": 294
+    },
+    {
+      "state": "Bihar",
+      "constituency": "GOPALGANJ (SC)",
+      "works": 51
+    },
+    {
+      "state": "Bihar",
+      "constituency": "HAJIPUR(SC)",
+      "works": 47
+    },
+    {
+      "state": "Bihar",
+      "constituency": "JAHANABAD",
+      "works": 120
+    },
+    {
+      "state": "Bihar",
+      "constituency": "JAMUI(SC)",
+      "works": 56
+    },
+    {
+      "state": "Bihar",
+      "constituency": "JHANJHARPUR",
+      "works": 169
+    },
+    {
+      "state": "Bihar",
+      "constituency": "KARAKAT",
+      "works": 154
+    },
+    {
+      "state": "Bihar",
+      "constituency": "KATIHAR",
+      "works": 24
+    },
+    {
+      "state": "Bihar",
+      "constituency": "KHAGARIA",
+      "works": 96
+    },
+    {
+      "state": "Bihar",
+      "constituency": "KISHANGANJ",
+      "works": 276
+    },
+    {
+      "state": "Bihar",
+      "constituency": "MADHEPURA",
+      "works": 105
+    },
+    {
+      "state": "Bihar",
+      "constituency": "MADHUBANI",
+      "works": 198
+    },
+    {
+      "state": "Bihar",
+      "constituency": "MUZAFFARPUR",
+      "works": 93
+    },
+    {
+      "state": "Bihar",
+      "constituency": "NALANDA",
+      "works": 91
+    },
+    {
+      "state": "Bihar",
+      "constituency": "NAWADA",
+      "works": 1
+    },
+    {
+      "state": "Bihar",
+      "constituency": "PATNA SAHIB",
+      "works": 94
+    },
+    {
+      "state": "Bihar",
+      "constituency": "PURVI CHAMPARAN",
+      "works": 115
+    },
+    {
+      "state": "Bihar",
+      "constituency": "SAMASTIPUR(SC)",
+      "works": 16
+    },
+    {
+      "state": "Bihar",
+      "constituency": "SASARAM(SC)",
+      "works": 130
+    },
+    {
+      "state": "Bihar",
+      "constituency": "SHEOHAR",
+      "works": 24
+    },
+    {
+      "state": "Bihar",
+      "constituency": "SITAMARHI",
+      "works": 95
+    },
+    {
+      "state": "Bihar",
+      "constituency": "SIWAN",
+      "works": 44
+    },
+    {
+      "state": "Bihar",
+      "constituency": "SUPAUL",
+      "works": 70
+    },
+    {
+      "state": "Bihar",
+      "constituency": "VAISHALI",
+      "works": 33
+    },
+    {
+      "state": "Bihar",
+      "constituency": "VALMIKI NAGAR",
+      "works": 168
+    },
+    {
+      "state": "Chandigarh",
+      "constituency": "CHANDIGARH",
+      "works": 48
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "BASTAR(ST)",
+      "works": 154
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "BILASPUR",
+      "works": 98
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "DURG",
+      "works": 52
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "KANKER(ST)",
+      "works": 44
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "KORBA",
+      "works": 360
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "MAHASAMUND",
+      "works": 173
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "RAIGARH(ST)",
+      "works": 194
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "RAIPUR",
+      "works": 137
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "RAJNANDGAON",
+      "works": 91
+    },
+    {
+      "state": "Delhi",
+      "constituency": "EAST DELHI",
+      "works": 51
+    },
+    {
+      "state": "Delhi",
+      "constituency": "NEW DELHI",
+      "works": 58
+    },
+    {
+      "state": "Delhi",
+      "constituency": "NORTH EAST DELHI",
+      "works": 10
+    },
+    {
+      "state": "Delhi",
+      "constituency": "NORTH WEST DELHI(SC)",
+      "works": 11
+    },
+    {
+      "state": "Delhi",
+      "constituency": "SOUTH DELHI",
+      "works": 45
+    },
+    {
+      "state": "Delhi",
+      "constituency": "WEST DELHI",
+      "works": 35
+    },
+    {
+      "state": "Goa",
+      "constituency": "NORTH GOA",
+      "works": 51
+    },
+    {
+      "state": "Goa",
+      "constituency": "SOUTH GOA",
+      "works": 48
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "AHMEDABAD EAST",
+      "works": 38
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "AHMEDABAD WEST(SC)",
+      "works": 27
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "AMRELI",
+      "works": 300
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "ANAND",
+      "works": 309
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "BANASKANTHA",
+      "works": 50
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "BARDOLI(ST)",
+      "works": 171
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "BHARUCH",
+      "works": 457
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "BHAVNAGAR",
+      "works": 65
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "CHHOTA UDAIPUR(ST)",
+      "works": 86
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "DAHOD(ST)",
+      "works": 324
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "GANDHINAGAR",
+      "works": 22
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "JAMNAGAR",
+      "works": 59
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "JUNAGADH",
+      "works": 160
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "KACHCHH(SC)",
+      "works": 156
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "KHEDA",
+      "works": 366
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "MAHESANA",
+      "works": 273
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "NAVSARI",
+      "works": 364
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "PANCHMAHAL",
+      "works": 178
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "PATAN",
+      "works": 166
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "PORBANDAR",
+      "works": 143
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "RAJKOT",
+      "works": 149
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "SABARKANTHA",
+      "works": 224
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "SURAT",
+      "works": 203
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "SURENDRANAGAR",
+      "works": 198
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "VADODARA",
+      "works": 121
+    },
+    {
+      "state": "Gujarat",
+      "constituency": "VALSAD(ST)",
+      "works": 106
+    },
+    {
+      "state": "Haryana",
+      "constituency": "AMBALA (SC)",
+      "works": 3
+    },
+    {
+      "state": "Haryana",
+      "constituency": "BHIWANI MAHENDRAGARH",
+      "works": 105
+    },
+    {
+      "state": "Haryana",
+      "constituency": "FARIDABAD",
+      "works": 6
+    },
+    {
+      "state": "Haryana",
+      "constituency": "GURGAON",
+      "works": 31
+    },
+    {
+      "state": "Haryana",
+      "constituency": "HISAR",
+      "works": 192
+    },
+    {
+      "state": "Haryana",
+      "constituency": "KARNAL",
+      "works": 2
+    },
+    {
+      "state": "Haryana",
+      "constituency": "KURUKSHETRA",
+      "works": 302
+    },
+    {
+      "state": "Haryana",
+      "constituency": "ROHTAK",
+      "works": 169
+    },
+    {
+      "state": "Haryana",
+      "constituency": "SIRSA(SC)",
+      "works": 66
+    },
+    {
+      "state": "Himachal Pradesh",
+      "constituency": "KANGRA",
+      "works": 395
+    },
+    {
+      "state": "Himachal Pradesh",
+      "constituency": "MANDI",
+      "works": 107
+    },
+    {
+      "state": "Himachal Pradesh",
+      "constituency": "SHIMLA (SC)",
+      "works": 244
+    },
+    {
+      "state": "Jammu And Kashmir",
+      "constituency": "ANANTNAG",
+      "works": 17
+    },
+    {
+      "state": "Jammu And Kashmir",
+      "constituency": "JAMMU",
+      "works": 53
+    },
+    {
+      "state": "Jammu And Kashmir",
+      "constituency": "SRINAGAR",
+      "works": 73
+    },
+    {
+      "state": "Jammu And Kashmir",
+      "constituency": "UDHAMPUR",
+      "works": 374
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "CHATRA",
+      "works": 75
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "DHANBAD",
+      "works": 57
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "DUMKA(ST)",
+      "works": 145
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "GIRIDIH",
+      "works": 951
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "JAMSHEDPUR",
+      "works": 2
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "KHUNTI(ST)",
+      "works": 188
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "KODARMA",
+      "works": 85
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "LOHARDAGA(ST)",
+      "works": 71
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "PALAMU(SC)",
+      "works": 124
+    },
+    {
+      "state": "Jharkhand",
+      "constituency": "RANCHI",
+      "works": 184
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "BAGALKOT",
+      "works": 179
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "BANGALORE CENTRAL",
+      "works": 4
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "BANGALORE NORTH",
+      "works": 53
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "BANGALORE RURAL",
+      "works": 211
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "BANGALORE SOUTH",
+      "works": 54
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "BELLARY(ST)",
+      "works": 2
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "BIDAR",
+      "works": 36
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "BIJAPUR(SC)",
+      "works": 100
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "CHAMARAJANAGAR(SC)",
+      "works": 21
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "CHIKBALLAPUR",
+      "works": 111
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "CHITRADURGA(SC)",
+      "works": 30
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "DAKSHINA KANNADA",
+      "works": 110
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "DHARWAD",
+      "works": 67
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "HAVERI",
+      "works": 33
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "KOLAR(SC)",
+      "works": 66
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "KOPPAL",
+      "works": 115
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "MANDYA",
+      "works": 7
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "MYSORE",
+      "works": 97
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "RAICHUR(ST)",
+      "works": 15
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "SHIMOGA",
+      "works": 159
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "TUMKUR",
+      "works": 5
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "UDUPI CHIKMAGALUR",
+      "works": 198
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "UTTARA KANNADA",
+      "works": 105
+    },
+    {
+      "state": "Kerala",
+      "constituency": "ALAPPUZHA",
+      "works": 77
+    },
+    {
+      "state": "Kerala",
+      "constituency": "ALATHUR(SC)",
+      "works": 86
+    },
+    {
+      "state": "Kerala",
+      "constituency": "ATTINGAL",
+      "works": 134
+    },
+    {
+      "state": "Kerala",
+      "constituency": "CHALAKUDY",
+      "works": 104
+    },
+    {
+      "state": "Kerala",
+      "constituency": "ERNAKULAM",
+      "works": 74
+    },
+    {
+      "state": "Kerala",
+      "constituency": "IDUKKI",
+      "works": 267
+    },
+    {
+      "state": "Kerala",
+      "constituency": "KANNUR",
+      "works": 180
+    },
+    {
+      "state": "Kerala",
+      "constituency": "KASARAGOD",
+      "works": 100
+    },
+    {
+      "state": "Kerala",
+      "constituency": "KOLLAM",
+      "works": 113
+    },
+    {
+      "state": "Kerala",
+      "constituency": "KOTTAYAM",
+      "works": 143
+    },
+    {
+      "state": "Kerala",
+      "constituency": "KOZHIKODE",
+      "works": 14
+    },
+    {
+      "state": "Kerala",
+      "constituency": "MALAPPURAM",
+      "works": 40
+    },
+    {
+      "state": "Kerala",
+      "constituency": "PALAKKAD",
+      "works": 190
+    },
+    {
+      "state": "Kerala",
+      "constituency": "PATHANAMTHITTA",
+      "works": 252
+    },
+    {
+      "state": "Kerala",
+      "constituency": "PONNANI",
+      "works": 48
+    },
+    {
+      "state": "Kerala",
+      "constituency": "THIRUVANANTHAPURAM",
+      "works": 61
+    },
+    {
+      "state": "Kerala",
+      "constituency": "THRISSUR",
+      "works": 18
+    },
+    {
+      "state": "Kerala",
+      "constituency": "VADAKARA",
+      "works": 4
+    },
+    {
+      "state": "Kerala",
+      "constituency": "WAYANAD",
+      "works": 10
+    },
+    {
+      "state": "Lakshadweep",
+      "constituency": "LAKSHADWEEP(ST)",
+      "works": 2
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "BALAGHAT",
+      "works": 78
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "BETUL(ST)",
+      "works": 433
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "BHIND(SC)",
+      "works": 5
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "BHOPAL",
+      "works": 17
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "CHHINDWARA",
+      "works": 212
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "DAMOH",
+      "works": 293
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "DEWAS(SC)",
+      "works": 17
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "DHAR(ST)",
+      "works": 139
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "GUNA",
+      "works": 75
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "GWALIOR",
+      "works": 7
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "HOSHANGABAD",
+      "works": 219
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "INDORE",
+      "works": 207
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "JABALPUR",
+      "works": 16
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "KHAJURAHO",
+      "works": 9
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "KHANDWA",
+      "works": 139
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "KHARGONE(ST)",
+      "works": 302
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "MANDLA(ST)",
+      "works": 171
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "MORENA",
+      "works": 77
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "RAJGARH",
+      "works": 34
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "RATLAM(ST)",
+      "works": 112
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "REWA",
+      "works": 67
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "SAGAR",
+      "works": 178
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "SATNA",
+      "works": 26
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "SHAHDOL (ST)",
+      "works": 50
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "SIDHI",
+      "works": 333
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "TIKAMGARH(SC)",
+      "works": 71
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "UJJAIN(SC)",
+      "works": 110
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "VIDISHA",
+      "works": 10
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "AHMEDNAGAR",
+      "works": 13
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "AKOLA",
+      "works": 51
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "AMRAVATI(SC)",
+      "works": 105
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "BARAMATI",
+      "works": 12
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "BEED",
+      "works": 60
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "BHANDARA-GONDIYA",
+      "works": 8
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "BHIWANDI",
+      "works": 11
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "CHANDRAPUR",
+      "works": 13
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "DHULE",
+      "works": 61
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "DINDORI(ST)",
+      "works": 19
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "GADCHIROLI-CHIMUR(ST)",
+      "works": 67
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "HATKANANGLE",
+      "works": 9
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "HINGOLI",
+      "works": 56
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "JALGAON",
+      "works": 27
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "JALNA",
+      "works": 50
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "KOLHAPUR",
+      "works": 30
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "LATUR(SC)",
+      "works": 75
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "MADHA",
+      "works": 76
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "MAVAL",
+      "works": 62
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "MUMBAI NORTH",
+      "works": 30
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "MUMBAI NORTH WEST",
+      "works": 34
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "MUMBAI NORTH-CENTRAL",
+      "works": 23
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "MUMBAI SOUTH",
+      "works": 56
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "NAGPUR",
+      "works": 32
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "NANDED",
+      "works": 26
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "NANDURBAR(ST)",
+      "works": 20
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "NASHIK",
+      "works": 21
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "OSMANABAD",
+      "works": 67
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "PALGHAR(ST)",
+      "works": 1
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "PARBHANI",
+      "works": 120
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "PUNE",
+      "works": 12
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "RAIGAD",
+      "works": 18
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "RAMTEK(SC)",
+      "works": 1
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "RATNAGIRI-SINDHUDURG",
+      "works": 25
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "RAVER",
+      "works": 6
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "SANGLI",
+      "works": 32
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "SATARA",
+      "works": 119
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "SHIRDI(SC)",
+      "works": 17
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "SHIRUR",
+      "works": 54
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "SOLAPUR(SC)",
+      "works": 6
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "WARDHA",
+      "works": 47
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "YAVATMAL-WASHIM",
+      "works": 78
+    },
+    {
+      "state": "Manipur",
+      "constituency": "INNER MANIPUR",
+      "works": 30
+    },
+    {
+      "state": "Manipur",
+      "constituency": "OUTER MANIPUR(ST)",
+      "works": 43
+    },
+    {
+      "state": "Meghalaya",
+      "constituency": "SHILLONG",
+      "works": 216
+    },
+    {
+      "state": "Meghalaya",
+      "constituency": "TURA",
+      "works": 141
+    },
+    {
+      "state": "Mizoram",
+      "constituency": "MIZORAM (ST)",
+      "works": 335
+    },
+    {
+      "state": "Nagaland",
+      "constituency": "NAGALAND",
+      "works": 81
+    },
+    {
+      "state": "Odisha",
+      "constituency": "ASKA",
+      "works": 31
+    },
+    {
+      "state": "Odisha",
+      "constituency": "BALASORE",
+      "works": 10
+    },
+    {
+      "state": "Odisha",
+      "constituency": "BARGARH",
+      "works": 41
+    },
+    {
+      "state": "Odisha",
+      "constituency": "BHADRAK(SC)",
+      "works": 27
+    },
+    {
+      "state": "Odisha",
+      "constituency": "BHUBANESWAR",
+      "works": 230
+    },
+    {
+      "state": "Odisha",
+      "constituency": "BOLANGIR",
+      "works": 3
+    },
+    {
+      "state": "Odisha",
+      "constituency": "CUTTACK",
+      "works": 94
+    },
+    {
+      "state": "Odisha",
+      "constituency": "JAGATSINGHPUR(SC)",
+      "works": 15
+    },
+    {
+      "state": "Odisha",
+      "constituency": "JAJPUR(SC)",
+      "works": 6
+    },
+    {
+      "state": "Odisha",
+      "constituency": "KALAHANDI",
+      "works": 207
+    },
+    {
+      "state": "Odisha",
+      "constituency": "KANDHAMAL",
+      "works": 148
+    },
+    {
+      "state": "Odisha",
+      "constituency": "KENDRAPARA",
+      "works": 11
+    },
+    {
+      "state": "Odisha",
+      "constituency": "KEONJHAR(ST)",
+      "works": 134
+    },
+    {
+      "state": "Odisha",
+      "constituency": "KORAPUT(ST)",
+      "works": 264
+    },
+    {
+      "state": "Odisha",
+      "constituency": "MAYURBHANJ (ST)",
+      "works": 27
+    },
+    {
+      "state": "Odisha",
+      "constituency": "NABARANGPUR(ST)",
+      "works": 88
+    },
+    {
+      "state": "Odisha",
+      "constituency": "PURI",
+      "works": 366
+    },
+    {
+      "state": "Odisha",
+      "constituency": "SAMBALPUR",
+      "works": 2
+    },
+    {
+      "state": "Odisha",
+      "constituency": "SUNDARGARH (ST)",
+      "works": 233
+    },
+    {
+      "state": "Puducherry",
+      "constituency": "Puducherry",
+      "works": 46
+    },
+    {
+      "state": "Punjab",
+      "constituency": "AMRITSAR",
+      "works": 108
+    },
+    {
+      "state": "Punjab",
+      "constituency": "ANANDPUR SAHIB",
+      "works": 267
+    },
+    {
+      "state": "Punjab",
+      "constituency": "FARIDKOT(SC)",
+      "works": 361
+    },
+    {
+      "state": "Punjab",
+      "constituency": "FATEHGARH SAHIB(SC)",
+      "works": 72
+    },
+    {
+      "state": "Punjab",
+      "constituency": "GURDASPUR",
+      "works": 78
+    },
+    {
+      "state": "Punjab",
+      "constituency": "HOSHIARPUR(SC)",
+      "works": 151
+    },
+    {
+      "state": "Punjab",
+      "constituency": "JALANDHAR(SC)",
+      "works": 48
+    },
+    {
+      "state": "Punjab",
+      "constituency": "LUDHIANA",
+      "works": 128
+    },
+    {
+      "state": "Punjab",
+      "constituency": "PATIALA",
+      "works": 70
+    },
+    {
+      "state": "Punjab",
+      "constituency": "SANGRUR",
+      "works": 208
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "AJMER",
+      "works": 111
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "ALWAR",
+      "works": 71
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "BANSWARA(ST)",
+      "works": 90
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "BARMER",
+      "works": 177
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "BHARATPUR(SC)",
+      "works": 249
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "BHILWARA",
+      "works": 128
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "BIKANER(SC)",
+      "works": 68
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "CHITTORGARH",
+      "works": 24
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "CHURU",
+      "works": 37
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "DAUSA(ST)",
+      "works": 17
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "GANGANAGAR(SC)",
+      "works": 2
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "JAIPUR",
+      "works": 27
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "JAIPUR RURAL",
+      "works": 13
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "JALORE",
+      "works": 108
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "JHALAWAR-BARAN",
+      "works": 6
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "JHUNJHUNU",
+      "works": 145
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "KARAULI-DHOLPUR(SC)",
+      "works": 11
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "KOTA",
+      "works": 43
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "NAGAUR",
+      "works": 489
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "PALI",
+      "works": 11
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "RAJSAMAND",
+      "works": 26
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "SIKAR",
+      "works": 109
+    },
+    {
+      "state": "Rajasthan",
+      "constituency": "UDAIPUR(ST)",
+      "works": 74
+    },
+    {
+      "state": "Sikkim",
+      "constituency": "SIKKIM",
+      "works": 79
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "ARAKKONAM",
+      "works": 73
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "ARANI",
+      "works": 332
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "CHENNAI CENTRAL",
+      "works": 9
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "CHENNAI NORTH",
+      "works": 59
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "CHENNAI SOUTH",
+      "works": 15
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "CHIDAMBARAM(SC)",
+      "works": 76
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "COIMBATORE",
+      "works": 7
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "CUDDALORE",
+      "works": 171
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "DINDIGUL",
+      "works": 94
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "ERODE",
+      "works": 226
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "KALLAKURICHI",
+      "works": 262
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "KANCHEEPURAM(SC)",
+      "works": 396
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "KARUR",
+      "works": 137
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "KRISHNAGIRI",
+      "works": 59
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "MADURAI",
+      "works": 50
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "NAGAPATTINAM(SC)",
+      "works": 65
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "NAMAKKAL",
+      "works": 250
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "NILGIRIS(SC)",
+      "works": 129
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "PERAMBALUR",
+      "works": 81
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "POLLACHI",
+      "works": 54
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "RAMANATHAPURAM",
+      "works": 84
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "SIVAGANGA",
+      "works": 191
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "SRIPERUMBUDUR",
+      "works": 56
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "TENKASI(SC)",
+      "works": 144
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "THANJAVUR",
+      "works": 103
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "THENI",
+      "works": 52
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "TIRUCHIRAPPALLI",
+      "works": 81
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "TIRUNELVELI",
+      "works": 67
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "TIRUPPUR",
+      "works": 126
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "TIRUVANNAMALAI",
+      "works": 260
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "VELLORE",
+      "works": 15
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "VILUPPURAM(SC)",
+      "works": 290
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "VIRUDHUNAGAR",
+      "works": 111
+    },
+    {
+      "state": "Telangana",
+      "constituency": "ADILABAD(ST)",
+      "works": 80
+    },
+    {
+      "state": "Telangana",
+      "constituency": "HYDERABAD",
+      "works": 1
+    },
+    {
+      "state": "Telangana",
+      "constituency": "KARIMNAGAR",
+      "works": 171
+    },
+    {
+      "state": "Telangana",
+      "constituency": "KHAMMAM",
+      "works": 19
+    },
+    {
+      "state": "Telangana",
+      "constituency": "MAHABUBABAD",
+      "works": 382
+    },
+    {
+      "state": "Telangana",
+      "constituency": "MAHABUBNAGAR",
+      "works": 173
+    },
+    {
+      "state": "Telangana",
+      "constituency": "MALKAJGIRI",
+      "works": 92
+    },
+    {
+      "state": "Telangana",
+      "constituency": "MEDAK",
+      "works": 102
+    },
+    {
+      "state": "Telangana",
+      "constituency": "NAGARKURNOOL(SC)",
+      "works": 132
+    },
+    {
+      "state": "Telangana",
+      "constituency": "NALGONDA",
+      "works": 7
+    },
+    {
+      "state": "Telangana",
+      "constituency": "NIZAMABAD",
+      "works": 1070
+    },
+    {
+      "state": "Telangana",
+      "constituency": "ZAHIRABAD",
+      "works": 64
+    },
+    {
+      "state": "Tripura",
+      "constituency": "TRIPURA EAST(ST)",
+      "works": 11
+    },
+    {
+      "state": "Tripura",
+      "constituency": "TRIPURA WEST",
+      "works": 11
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "AGRA(SC)",
+      "works": 136
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "AKBARPUR",
+      "works": 110
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "ALIGARH",
+      "works": 47
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "ALLAHABAD",
+      "works": 3
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "AMBEDKAR NAGAR",
+      "works": 227
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "AMETHI",
+      "works": 27
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "AMROHA",
+      "works": 111
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "AONLA",
+      "works": 18
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "AZAMGARH",
+      "works": 21
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BADAUN",
+      "works": 164
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BAGHPAT",
+      "works": 37
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BAHRAICH(SC)",
+      "works": 95
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BALLIA",
+      "works": 159
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BANDA",
+      "works": 476
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BARABANKI(SC)",
+      "works": 26
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BAREILLY",
+      "works": 178
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BASTI",
+      "works": 85
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BHADOHI",
+      "works": 1044
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BIJNOR",
+      "works": 80
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "BULANDSHAHR(SC)",
+      "works": 142
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "CHANDAULI",
+      "works": 21
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "DEORIA",
+      "works": 123
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "DHAURAHRA",
+      "works": 97
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "ETAH",
+      "works": 432
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "ETAWAH(SC)",
+      "works": 574
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "FAIZABAD",
+      "works": 164
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "FARRUKHABAD",
+      "works": 556
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "FATEHPUR",
+      "works": 35
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "FATEHPUR SIKRI",
+      "works": 91
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "FIROZABAD",
+      "works": 77
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "GAUTAM BUDDHA NAGAR",
+      "works": 152
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "GHAZIABAD",
+      "works": 42
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "GHAZIPUR",
+      "works": 184
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "GHOSI",
+      "works": 298
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "GONDA",
+      "works": 125
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "GORAKHPUR",
+      "works": 5
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "HARDOI (SC)",
+      "works": 20
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "HATHRAS (SC)",
+      "works": 113
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "JALAUN(SC)",
+      "works": 26
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "JAUNPUR",
+      "works": 919
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "JHANSI",
+      "works": 91
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "KAIRANA",
+      "works": 45
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "KAISERGANJ",
+      "works": 91
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "KANNAUJ",
+      "works": 79
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "KANPUR",
+      "works": 50
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "KAUSHAMBI(SC)",
+      "works": 1369
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "KHERI",
+      "works": 543
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "KUSHI NAGAR",
+      "works": 362
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "LALGANJ (SC)",
+      "works": 255
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "LUCKNOW",
+      "works": 91
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "MACHHLISHAHR(SC)",
+      "works": 2044
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "MAINPURI",
+      "works": 93
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "MATHURA",
+      "works": 47
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "MEERUT",
+      "works": 114
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "MISRIKH(SC)",
+      "works": 3
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "MOHANLALGANJ(SC)",
+      "works": 140
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "MORADABAD",
+      "works": 202
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "MUZAFFARNAGAR",
+      "works": 164
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "NAGINA(SC)",
+      "works": 426
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "PHULPUR",
+      "works": 14
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "PILIBHIT",
+      "works": 13
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "PRATAPGARH",
+      "works": 200
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "RAE BARELI",
+      "works": 182
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "RAMPUR",
+      "works": 356
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "ROBERTSGANJ(SC)",
+      "works": 577
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "SAHARANPUR",
+      "works": 51
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "SALEMPUR",
+      "works": 259
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "SANT KABIR NAGAR",
+      "works": 5
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "SHAHJAHANPUR(SC)",
+      "works": 8
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "SITAPUR",
+      "works": 59
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "SULTANPUR",
+      "works": 26
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "UNNAO",
+      "works": 49
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "VARANASI",
+      "works": 191
+    },
+    {
+      "state": "Uttarakhand",
+      "constituency": "ALMORA(SC)",
+      "works": 4
+    },
+    {
+      "state": "Uttarakhand",
+      "constituency": "GARHWAL",
+      "works": 1
+    },
+    {
+      "state": "Uttarakhand",
+      "constituency": "TEHRI GARHWAL",
+      "works": 154
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "ALIPURDUARS(ST)",
+      "works": 14
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "ASANSOL",
+      "works": 19
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BAHARAMPUR",
+      "works": 8
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BALURGHAT",
+      "works": 119
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BANGAON(SC)",
+      "works": 8
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BANKURA",
+      "works": 64
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BARASAT",
+      "works": 90
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BARDHAMAN PURBA(SC)",
+      "works": 97
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BARDHAMAN-DURGAPUR",
+      "works": 87
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BASIRHAT",
+      "works": 56
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BIRBHUM",
+      "works": 116
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BISHNUPUR(SC)",
+      "works": 118
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BOLPUR(SC)",
+      "works": 344
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "DARJEELING",
+      "works": 252
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "DIAMOND HARBOUR",
+      "works": 502
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "DUM DUM",
+      "works": 36
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "GHATAL",
+      "works": 108
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "HOOGHLY",
+      "works": 100
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "HOWRAH",
+      "works": 147
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "JADAVPUR",
+      "works": 283
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "JALPAIGURI(SC)",
+      "works": 2
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "JANGIPUR",
+      "works": 17
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "JHARGRAM(ST)",
+      "works": 74
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "KANTHI",
+      "works": 94
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "KOLKATA DAKSHIN",
+      "works": 95
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "KOLKATA UTTAR",
+      "works": 23
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "KRISHNANAGAR",
+      "works": 73
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "MALDAHA DAKSHIN",
+      "works": 61
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "MALDAHA UTTAR",
+      "works": 17
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "MATHURAPUR(SC)",
+      "works": 258
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "MEDINIPUR",
+      "works": 30
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "MURSHIDABAD",
+      "works": 521
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "PURULIA",
+      "works": 5
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "RAIGANJ",
+      "works": 98
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "RANAGHAT(SC)",
+      "works": 220
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "SREERAMPUR",
+      "works": 181
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "TAMLUK",
+      "works": 116
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "ULUBERIA",
+      "works": 189
+    }
+  ],
+  "alias_match": [
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "ANAKAPALLE",
+      "works": 20,
+      "geojson_name": "Anakapalli"
+    },
+    {
+      "state": "Andhra Pradesh",
+      "constituency": "ANANTAPUR",
+      "works": 84,
+      "geojson_name": "Anantapuramu"
+    },
+    {
+      "state": "Assam",
+      "constituency": "Darrang-Udalguri",
+      "works": 5,
+      "geojson_name": "Mangaldoi"
+    },
+    {
+      "state": "Assam",
+      "constituency": "Diphu (ST)",
+      "works": 137,
+      "geojson_name": "Autonomous District"
+    },
+    {
+      "state": "Assam",
+      "constituency": "GUWAHATI",
+      "works": 95,
+      "geojson_name": "Gauhati"
+    },
+    {
+      "state": "Assam",
+      "constituency": "Sonitpur",
+      "works": 55,
+      "geojson_name": "Tezpur"
+    },
+    {
+      "state": "Bihar",
+      "constituency": "PURNEA",
+      "works": 132,
+      "geojson_name": "Purnia"
+    },
+    {
+      "state": "Bihar",
+      "constituency": "UJJARPUR",
+      "works": 111,
+      "geojson_name": "Ujiarpur"
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "JANJGIR CHAMPA(SC)",
+      "works": 376,
+      "geojson_name": "Janjgir"
+    },
+    {
+      "state": "Chhattisgarh",
+      "constituency": "SARGUJA(ST)",
+      "works": 207,
+      "geojson_name": "Surguja"
+    },
+    {
+      "state": "Delhi",
+      "constituency": "CHANDINI CHOWK",
+      "works": 35,
+      "geojson_name": "Chandni Chowk"
+    },
+    {
+      "state": "Haryana",
+      "constituency": "SONEPAT",
+      "works": 25,
+      "geojson_name": "Sonipat"
+    },
+    {
+      "state": "Jammu And Kashmir",
+      "constituency": "BARAMULLAH",
+      "works": 44,
+      "geojson_name": "Baramulla"
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "BELGAUM",
+      "works": 1,
+      "geojson_name": "Belagavi"
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "CHIKKODI",
+      "works": 33,
+      "geojson_name": "Chikodi"
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "DAVANAGERE",
+      "works": 35,
+      "geojson_name": "Davangere"
+    },
+    {
+      "state": "Karnataka",
+      "constituency": "HASSAN",
+      "works": 33,
+      "geojson_name": "Haasan"
+    },
+    {
+      "state": "Kerala",
+      "constituency": "MAVELIKKARA(SC)",
+      "works": 110,
+      "geojson_name": "Mavelikara"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "constituency": "MANDSOUR",
+      "works": 61,
+      "geojson_name": "Mandsaur"
+    },
+    {
+      "state": "Punjab",
+      "constituency": "BHATINDA",
+      "works": 212,
+      "geojson_name": "Bathinda"
+    },
+    {
+      "state": "Punjab",
+      "constituency": "FIROZPUR",
+      "works": 513,
+      "geojson_name": "Firozepur"
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "DHARAMAPURI",
+      "works": 81,
+      "geojson_name": "Dharmapuri"
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "KANNIYAKUMARI",
+      "works": 91,
+      "geojson_name": "Kanyakumari"
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "MAYILADUTHURAI",
+      "works": 40,
+      "geojson_name": "Mayiladuturai"
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "THOOTHUKKUDI",
+      "works": 37,
+      "geojson_name": "Thoothukudi"
+    },
+    {
+      "state": "Tamil Nadu",
+      "constituency": "TIRUVALLUR(SC)",
+      "works": 162,
+      "geojson_name": "Thiruvallur"
+    },
+    {
+      "state": "Telangana",
+      "constituency": "BHONGIR",
+      "works": 1066,
+      "geojson_name": "Bhuvanagiri"
+    },
+    {
+      "state": "Telangana",
+      "constituency": "CHELVELLA",
+      "works": 352,
+      "geojson_name": "Chevella"
+    },
+    {
+      "state": "Telangana",
+      "constituency": "PEDDAPALLE",
+      "works": 9,
+      "geojson_name": "Peddapalli"
+    },
+    {
+      "state": "Telangana",
+      "constituency": "WARANGEL(SC)",
+      "works": 111,
+      "geojson_name": "Warangal"
+    },
+    {
+      "state": "Uttarakhand",
+      "constituency": "HARDWAR",
+      "works": 3,
+      "geojson_name": "Haridwar"
+    },
+    {
+      "state": "Uttarakhand",
+      "constituency": "NAINITAL UDHAM SINGH NAG.",
+      "works": 160,
+      "geojson_name": "Nainital-Udhamsingh Nagar"
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "ARAMBAG(SC)",
+      "works": 189,
+      "geojson_name": "Arambagh"
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "BARRACKPUR",
+      "works": 10,
+      "geojson_name": "Barrackpore"
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "COOCHBEHAR(SC)",
+      "works": 89,
+      "geojson_name": "Cooch Behar"
+    },
+    {
+      "state": "West Bengal",
+      "constituency": "JOYNAGAR(SC)",
+      "works": 375,
+      "geojson_name": "Jaynagar"
+    }
+  ],
+  "centroid_fallback": [
+    {
+      "state": "Bihar",
+      "constituency": "AURANGABAD_BR",
+      "works": 152
+    },
+    {
+      "state": "Bihar",
+      "constituency": "MAHARAJGANJ_BR",
+      "works": 24
+    },
+    {
+      "state": "Himachal Pradesh",
+      "constituency": "HAMIRPUR_HP",
+      "works": 47
+    },
+    {
+      "state": "Maharashtra",
+      "constituency": "AURANGABAD_MH",
+      "works": 32
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "HAMIRPUR_UP",
+      "works": 163
+    },
+    {
+      "state": "Uttar Pradesh",
+      "constituency": "MAHARAJGANJ_UP",
+      "works": 78
+    }
+  ],
+  "unmatched": []
+}
