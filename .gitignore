@@ -1,0 +1,31 @@
+**/node_modules/
+**/dist/
+
+# Secrets: .env files at every depth (a pattern without a slash matches in any
+# directory); only the placeholder .env.example files are tracked.
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+*.log
+
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+.pytest_cache/
+.hypothesis/
+e2e-logs/
+
+.vscode/
+
+data/processed/
+
+# Fetched geo boundary source files (large binaries; re-fetched by
+# backend_v2/scripts/fetch_geo_data.sh, not committed -- see
+# backend_v2/app/ingest/geo_load.py for provenance/licence).
+backend_v2/app/geo_data_src/
+ci-artifacts/
