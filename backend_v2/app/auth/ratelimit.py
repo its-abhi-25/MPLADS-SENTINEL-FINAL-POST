@@ -15,6 +15,7 @@ example Redis) behind the same interface -- documented in docs/security.md.
 
 from __future__ import annotations
 
+import ipaddress
 import math
 import threading
 import time
@@ -55,12 +56,35 @@ class RateLimiter:
 LIMITER = RateLimiter()
 
 
+def _in(addr: str, networks: list) -> bool:
+    try:
+        ip = ipaddress.ip_address(addr)
+    except ValueError:
+        return False
+    return any(ip in n for n in networks)
+
+
 def client_key(request: Request) -> str:
-    if get_settings().trust_forwarded_for:
-        fwd = request.headers.get("x-forwarded-for")
-        if fwd:
-            return fwd.split(",")[0].strip()
-    return request.client.host if request.client else "unknown"
+    """The client address the limits count against (Phase 14).
+
+    Only when the TCP peer is a configured proxy (TRUSTED_PROXIES) are
+    forwarded headers used: Cloudflare's CF-Connecting-IP (set by its edge,
+    overwriting anything the client sent), else the right-most
+    X-Forwarded-For hop that is not itself a trusted proxy. The left-most
+    X-Forwarded-For entry is never used: the client writes it. Any other
+    peer is counted by its own address, whatever headers it sends."""
+    peer = request.client.host if request.client else "unknown"
+    networks = get_settings().trusted_proxy_networks
+    if not networks or not _in(peer, networks):
+        return peer
+    cf = (request.headers.get("cf-connecting-ip") or "").strip()
+    if cf and _in(cf, [ipaddress.ip_network("0.0.0.0/0"), ipaddress.ip_network("::/0")]):
+        return cf
+    hops = [h.strip() for h in (request.headers.get("x-forwarded-for") or "").split(",") if h.strip()]
+    for hop in reversed(hops):
+        if not _in(hop, networks):
+            return hop
+    return peer
 
 
 def limit(bucket: str, request: Request, *extra_keys: str) -> None:

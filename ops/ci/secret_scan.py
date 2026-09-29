@@ -56,7 +56,16 @@ SKIP_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".ico", ".pdf", ".parquet", ".
                  ".zip", ".gz", ".woff", ".woff2", ".ttf", ".pyc", ".dump"}
 
 
-def tracked_files(root: Path) -> list[Path]:
+def _is_env_file(name: str) -> bool:
+    """.env, .env.<anything> and <anything>.env are env files; *.example templates are not."""
+    if name.endswith(".example"):
+        return False
+    return name == ".env" or name.startswith(".env.") or name.endswith(".env")
+
+
+def tracked_files(root: Path, walk: bool = False) -> list[Path]:
+    if walk:  # every file under root, e.g. a build output (dist/) that git ignores
+        return [p for p in root.rglob("*") if p.is_file()]
     try:
         out = subprocess.run(["git", "ls-files", "-z"], cwd=root, capture_output=True, check=True)
         return [root / p for p in out.stdout.decode().split("\0") if p]
@@ -68,7 +77,7 @@ def tracked_files(root: Path) -> list[Path]:
             dirnames[:] = [d for d in dirnames if d not in skip_dirs]
             for f in filenames:
                 # untracked-by-rule files (.gitignore): real .env files are not part of a commit
-                if f == ".env" or (f.startswith(".env.") and f != ".env.example"):
+                if _is_env_file(f):
                     continue
                 files.append(Path(dirpath) / f)
         return files
@@ -85,18 +94,19 @@ def scan_text(text: str, rel: str = "") -> list[tuple[int, str]]:
             if pat.search(line):
                 hits.append((n, name))
         for m in assign.finditer(line):
-            var, value = m.group("name"), m.group("value").strip()
+            # Markdown code spans (`NAME=...`) end in a backtick that is not part of the value
+            var, value = m.group("name"), m.group("value").strip().strip("`")
             if (rel, var) in ALLOWLIST or PLACEHOLDER.match(value):
                 continue
             hits.append((n, f"secret-assignment:{var}"))
     return hits
 
 
-def scan_files(root: Path) -> list[str]:
+def scan_files(root: Path, walk: bool = False) -> list[str]:
     findings = []
-    for p in tracked_files(root):
+    for p in tracked_files(root, walk):
         rel = p.relative_to(root).as_posix()
-        if p.name == ".env" or (p.name.startswith(".env.") and p.name != ".env.example"):
+        if _is_env_file(p.name):
             findings.append(f"{rel}: tracked .env file")
             continue
         if p.suffix.lower() in SKIP_SUFFIXES or not p.is_file():
@@ -123,7 +133,7 @@ def scan_history(root: Path) -> list[str]:
             _mode, kind, blob = meta.split()
             if kind != "blob" or Path(path).suffix.lower() in SKIP_SUFFIXES:
                 continue
-            if Path(path).name == ".env":
+            if _is_env_file(Path(path).name):
                 findings.append(f"{commit[:10]}:{path}: committed .env file")
             data = subprocess.run(["git", "cat-file", "-p", blob], cwd=root, capture_output=True).stdout
             findings += [
@@ -136,9 +146,11 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=str(Path(__file__).resolve().parents[2]))
     ap.add_argument("--history", action="store_true")
+    ap.add_argument("--walk", action="store_true", help="scan every file under --root (git-ignored build output)")
     args = ap.parse_args()
     root = Path(args.root)
-    findings = scan_files(root)
+    findings = scan_files(root, args.walk)
+    print(f"scanned {len(tracked_files(root, args.walk))} file(s) under {root.name or root}")
     if args.history:
         hist = scan_history(root)
         if hist and hist[0].startswith("(no git"):

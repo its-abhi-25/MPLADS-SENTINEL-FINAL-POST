@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
 
 // House filter ('LS' | 'RS' | null), set by components/HouseToggle.jsx.
 // Only the seven dataset-wide calls below take it, and only when one house

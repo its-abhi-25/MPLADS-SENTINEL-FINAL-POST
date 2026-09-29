@@ -9,6 +9,16 @@
 **/.env.*
 !.env.example
 !**/.env.example
+# Phase 14: env files named <something>.env (ops/deploy/deploy.env), and the
+# Cloudflare tunnel credentials JSON.
+*.env
+!*.env.example
+ops/deploy/cloudflared/*.json
+# Vercel CLI project link
+.vercel/
+# Phase 14 route-test outputs
+ops/deploy/routes/out/
+ops/deploy/routes/expected.json
 
 *.log
 

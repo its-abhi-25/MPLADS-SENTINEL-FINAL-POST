@@ -243,7 +243,10 @@ No phase built them. See the limitations in §10.
 
 **No Phase 8 deliverable exists as a separate artefact.** Its registry and explainability work
 landed in Phase 6, whose report is titled "Phase 6/8". There is no consolidated ML validation
-report and **no written gate-G6 criteria document**. This section is compiled from:
+report and **no written gate-G6 criteria document**. (Both now exist, written 2026-09-29 as a
+dated retrospective: `docs/phase8_ml_validation_report_retrospective.md` and
+`docs/gate_g6_criteria.md`. On run 44 they add confidence intervals and simple baselines: A1 and A2
+do not beat a work-type baseline.) This section is compiled from:
 - `docs/phase6_atypicality_report.md`;
 - `docs/phase7_report.md`;
 - the `model_version` registry.
@@ -470,6 +473,15 @@ wrongdoing.
 - says payments, payees and agencies are evidence only, never in the score;
 - names all seven cannot-claim items the copilot's prompt enforces.
 
+> **Correction, 2026-09-29 (Phase 13.z audit).** The sentence "Payments, payees and implementing
+> agencies are included as evidence only, never in the risk score" is **inaccurate for payments**.
+> Each work's total paid amount (`SUM(payment.amount)` per work) feeds `lifecycle_delay` component
+> B, "payment share ahead of completion vs peers", which is a base signal in the risk score, exactly
+> as BLUEPRINT §8 specifies ("Payment ahead of completion … Lifecycle delay signal input"). Payee and
+> agency **identity**, typing and entity metrics never reach the score; that half is correct.
+> The frontend string is outside the Phase 13.z scope (no frontend changes), so the fix is an owner
+> item: `docs/overnight_run_report.md`, "Needs me", has the proposed wording.
+
 | Language file | Change |
 | --- | --- |
 | `en.js` | All four keys rewritten |
@@ -568,14 +580,14 @@ migration `3f1a7c9e2b50`), and it refuses new reviews (409). Command:
 | Single tenure and snapshot; no longitudinal analysis | Snapshot A only for scores; the prior cycle is ingested but never served (§7) |
 | Work-level location is unknown | Markers are one per constituency; 139 works have no located district |
 | No synthetic-injection curves, no labelled duplicate pairs | Not built in any phase. The duplicate signal's precision is unmeasured. |
-| **No gate-G6 criteria document; no consolidated Phase 8 report** | Absent from `docs/` (§4) |
+| ~~No gate-G6 criteria document; no consolidated Phase 8 report~~ | **Resolved 2026-09-29 (Phase 13.z):** `docs/gate_g6_criteria.md` (thresholds left to the owner) and `docs/phase8_ml_validation_report_retrospective.md` (a dated retrospective compilation on run 44). See also `docs/ml_vendor_compliance_audit.md`. |
 | No human audit results yet | The mechanism only (§9) |
 | **Anonymous read is on by default** | See [Anonymous read](#anonymous-read). |
 | ~~Frontend copy claims "AI prioritises" (3 strings)~~ | **Resolved:** rewritten in all 12 languages (§7) |
 | ~~Frontend Methodology limitation `meth.lim.6` is out of date~~ | **Resolved:** rewritten to match the current data and the seven cannot-claim items (§7) |
 | **Personal data in work descriptions** | Phone numbers and Aadhaar-shaped numbers are masked. Names and disability details remain (see [Personal data](#personal-data)). |
 | Real Gemini key in the git-ignored root `.env` | The archive copy is deleted and a CI scan is in place. The key must still be rotated (§6). |
-| Rate limits are per API process | Multi-process deployments need a shared store (`docs/security.md`) |
+| Rate limits are per API process | The deployment runs one API worker; more workers need a shared store (`docs/security.md`, `docs/deployment.md`) |
 | No refresh token, no password-reset endpoint | Admin resets with `scripts/create_user.py` |
 | Run manifest has no git commit | The repository was initialised on 2026-09-28 (initial commit `7f287eb`); runs 1 and 44 predate it or were built from an uncommitted tree, so their manifests carry no commit (§11 provenance) |
 | **CI has never run on GitHub** | See [CI](#ci). |
@@ -732,11 +744,42 @@ school codes, letter numbers, decimals, and long asset or account codes.
 4. ~~Authority-state bug.~~ **Resolved 2026-09-28** (§10): fixed in the ingest, Phases 3–5 re-run
    as run 44 and published. New checksum `c4d589e0…`; flagged for review 31,814. Audit sample
    #13 archived and redrawn as #42 (§9).
-5. **Phase 8 gap.** Write the gate-G6 criteria document and a consolidated ML report, or accept
-   §4 as the record.
+5. ~~Phase 8 gap.~~ **Resolved 2026-09-29 (Phase 13.z):** the G6 criteria and a retrospective Phase 8
+   report are written; ML metrics were recomputed on run 44 with CIs and baselines. **Still open
+   (owner):** the G6 thresholds, B4 reviewer usefulness, duplicate labels, payee/agency review, a
+   retrain cadence, and the frontend `meth.lim.6` payments wording (`docs/overnight_run_report.md`).
 6. **Runtime.** Accept 39–50 minutes as meeting "in minutes", or set a numeric target (§5).
 7. ~~Personal data: phone numbers.~~ **Resolved** (§10): masked in every public output.
    Aadhaar-shaped numbers are masked too (Phase 13.y). **Still open:** whether to redact names
    and disability details (§10).
-8. **CORS.** Add the Phase 14 Vercel origin and preview pattern to `CORS_ORIGINS` and
-   `CORS_ORIGIN_REGEX` (`docs/security.md`).
+8. ~~CORS.~~ **Resolved** (Phase 14): `CORS_ORIGINS=https://sentinel-mplads.vercel.app` exactly, and
+   `CORS_ORIGIN_REGEX` is empty. A preview URL is allowed only while it is being tested, then
+   removed (`docs/deployment.md`).
+9. **Known limitations of the public deployment (Phase 14, accepted; no frontend behaviour
+   changed):**
+   - no Graph route;
+   - no not-found page (an unknown path shows the empty app shell, never a server 404);
+   - the Recalculate button shows its existing failure notice;
+   - the investigate, audit and reviewer features are unreachable from the public site;
+   - the login is a client-side demo.
+10. **Owner actions to go live:** `vercel login`, Deployment Protection before sharing, rotating
+    and attaching the Gemini key, the production deploy, and the first push. The API runs on a
+    Cloudflare quick tunnel, whose URL changes on restart: `docs/deployment.md` has a two-command
+    routine to update it.
+
+## 12. Deployment (Phase 14)
+
+See `docs/deployment.md`.
+- Frontend on Vercel: the SPA rewrite only; `API_BASE` comes from `VITE_API_BASE_URL`.
+- Backend, worker and database on the persistent Docker stack, behind a Cloudflare quick tunnel.
+- The client-IP trust fix and the one-worker limiter are in `docs/security.md`.
+
+**Verified (2026-09-29):**
+- The frontend build with `VITE_API_BASE_URL` set scans clean: `secret_scan.py --walk` over `dist/`, 8 files, 0 findings.
+- The deploy stack runs on the Cloudflare quick tunnel.
+- The post-deploy gate passes through the public HTTPS URL: all 9 checks, including checksum `c4d589e0…`, 52 tables' row counts and the API serving the same totals.
+- Live CORS: the production-origin preflight gets 200; another origin and an unlisted preview URL get 400.
+- Live access: all 8 probed case, audit and reviewer endpoints return 401 anonymously.
+- The route suite (`ops/deploy/routes/vercel_routes.py`) passes 101 of 101 against the production build served locally.
+
+**Pending, owner:** running the same route suite against the real Vercel preview (`docs/deployment.md` step 4).

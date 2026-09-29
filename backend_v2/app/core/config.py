@@ -59,8 +59,18 @@ class Settings(BaseSettings):
     rate_limit_login_per_minute: int = 10
     rate_limit_chat_per_minute: int = 30
     rate_limit_search_per_minute: int = 300
-    # Honour X-Forwarded-For only behind a proxy you control.
-    trust_forwarded_for: bool = False
+    # Phase 14: the reverse proxy(ies) in front of the API (e.g. the cloudflared
+    # container), comma-separated IPs or CIDRs. Forwarded client-IP headers
+    # (CF-Connecting-IP, X-Forwarded-For) are honoured ONLY when the TCP peer is
+    # one of these; any other caller's headers are ignored (they are spoofable).
+    trusted_proxies: str = ""
+
+    @property
+    def trusted_proxy_networks(self) -> list:
+        import ipaddress
+
+        parts = [p.strip() for p in self.trusted_proxies.split(",")]
+        return [ipaddress.ip_network(p, strict=False) for p in parts if p]
 
     @property
     def cors_origin_list(self) -> list[str]:

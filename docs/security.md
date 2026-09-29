@@ -129,7 +129,8 @@ The protected frontend is unchanged in Phase 13 (MUST NOT CHANGE). Its login pag
 
 ## Limitations (stated, not hidden)
 
-- **Rate limits are per API process.** Running several API processes needs a shared store (for example, Redis) behind the same `RateLimiter` interface.
+- **Rate limits are per API process.** The deployment runs one API worker (`docker-compose.deploy.yml`). Running several API processes needs a shared store (for example, Redis) behind the same `RateLimiter` interface.
+- **Client IP behind proxies (Phase 14).** Forwarded headers are honoured only when the TCP peer is listed in `TRUSTED_PROXIES` (the cloudflared container). The limiter then uses `CF-Connecting-IP`, else the right-most untrusted `X-Forwarded-For` hop. The old `TRUST_FORWARDED_FOR` flag trusted the client-written left-most hop from any caller; it has been removed. See `docs/deployment.md`.
 - **No refresh tokens and no password-reset endpoint.** Passwords are reset by an administrator with `create_user.py`.
 - **Blinding in the audit sample covers auditor accounts only.** With `ANONYMOUS_READ=true`, anyone (an auditor included) can see tiers in the public UI without logging in. For an audit round, run with `ANONYMOUS_READ=false` or accept that limitation.
 - **Beneficiary details in work descriptions.** Some portal work descriptions name beneficiaries and include disability details. For example: "beneficiary name …, disability is more then 40%, contact no …". Phone numbers and Aadhaar-shaped numbers are masked (1,992 phone numbers and 4 Aadhaar-shaped numbers in 1,900 descriptions). The rest is public portal text, served as-is. After masking, 583 descriptions mention a disability and 514 name a contact person. Whether to redact these is an owner decision under §11's personal-data row.
