@@ -8,16 +8,10 @@
     "backend": {
       "root": "backend_v2/",
       "framework": "fastapi",
-      "entrypoint": "app.main:app"
+      "entrypoint": "app/main.py"
     }
   },
   "rewrites": [
-    {
-      "source": "/api",
-      "destination": {
-        "service": "backend"
-      }
-    },
     {
       "source": "/api/(.*)",
       "destination": {
