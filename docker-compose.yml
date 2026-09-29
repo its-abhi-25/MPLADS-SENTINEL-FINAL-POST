@@ -36,8 +36,20 @@ services:
   api:
     build: ./backend_v2
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    # The real published run (run 44) lives in the `sentinel-p5c-pg`
+    # container's volume, published on host port 5447 -- the same database
+    # ops/deploy/deploy.env points the deploy stack at. The `postgres`
+    # service below is a separate, empty volume (migrations at the
+    # baseline `0001`, no tables), so pointing the api at it made every
+    # data endpoint fail with `relation "published_run" does not exist`,
+    # which app/api/params.py:guarded() turns into the 503 the landing
+    # page reported as "Live figures failed to load". Start that holder
+    # with `docker start sentinel-p5c-pg` (docs/deployment.md §1), and
+    # override DATABASE_URL on the command line if you move it.
+    # To build a fresh database here instead, leave this as
+    # postgres:5432 and run the pipeline (docs/phase12_report.md §8).
     environment:
-      DATABASE_URL: postgresql+psycopg://sentinel:sentinel@postgres:5432/sentinel
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://sentinel:sentinel@host.docker.internal:5447/sentinel}
       WARM_CACHE: "true"  # precompute summary/analytics/data-health at startup
       # Phase 13: set JWT_SECRET (>= 32 chars) from your secret store for any
       # non-development deployment; unset here = random per-process dev key.
@@ -59,7 +71,8 @@ services:
     build: ./backend_v2
     command: python -m worker.main
     environment:
-      DATABASE_URL: postgresql+psycopg://sentinel:sentinel@postgres:5432/sentinel
+      # Same served database as `api` (see the comment there).
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://sentinel:sentinel@host.docker.internal:5447/sentinel}
     depends_on:
       postgres:
         condition: service_healthy
@@ -74,12 +87,14 @@ services:
   # pg_dump (custom format) to the sentinel_v2_backups volume, each checked
   # readable, newest 14 kept. The executed restore test is
   # ops/backup/restore_test.sh (report: docs/restore_test_report.md).
+  # Backs up the same database `api` serves (host port 5447 by default;
+  # see the comment on `api`), so the dump contains the real run.
   backup:
     image: postgres:16
     command: ["sh", "/ops/backup.sh"]
     environment:
-      PGHOST: postgres
-      PGPORT: "5432"
+      PGHOST: ${BACKUP_PGHOST:-host.docker.internal}
+      PGPORT: ${BACKUP_PGPORT:-"5447"}
       PGUSER: sentinel
       PGPASSWORD: sentinel  # dev stack only; production passes it from a secret store
       PGDATABASE: sentinel
